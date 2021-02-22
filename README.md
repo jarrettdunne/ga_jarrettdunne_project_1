@@ -2,11 +2,12 @@
 
 ## Project Name
 
-The name of your project.
+Recipe Plan
 
 ## Project Description
+##### (Use this section to describe your final project and perhaps any links to relevant sites that help convey the concept and\or functionality.)
 
-Use this section to describe your final project and perhaps any links to relevant sites that help convey the concept and\or functionality.
+With the frequency with which quarentines and severe weather keep us inside, it is highly probable that people are suffering from food boredom. This app tries to remedy that with randomly selected recipes for each day of the week as well as the cumulative totals of the ingredients for a convienent shopping list. In addition, it will allow diet and health restrictions as parameters.  
 
 ## API and Data Sample
 
