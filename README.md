@@ -14,7 +14,53 @@ Specify the API you are using and include a link. Show us a snippet of JSON retu
 
 EDAMAM
 
-https://developer.edamam.com/edamam-docs-recipe-api
+Edamam provides nutrition solutions to businesses in the food, health and wellness sectors, leveraging its proprietary cloud-based, structured-data semantic technology platform. Unlike traditional competitors, we deliver value-added nutrition data in real time and at fraction of the cost, saving clients both time and money. Clients include Nestle,Samsung, Epicurious, Gannett and The New York Times.
+
+Base url: https://api.edamam.com
+
+Recipe Search API: https://developer.edamam.com/edamam-docs-recipe-api
+
+```
+{
+q: "chickem",
+from: 0,
+to: 10,
+more: false,
+count: 1,
+hits: [
+{
+recipe: {
+uri: "http://www.edamam.com/ontologies/edamam.owl#recipe_0644cc4e59dd72849e149fdf9bbbbafc",
+label: "Onion Casserole",
+image: "https://www.edamam.com/web-img/5b7/5b7c255a664d656a73d87ef99e149b1b.jpg",
+source: "Foodista",
+url: "http://www.foodista.com/recipe/TPHTHNK8/onion-casserole",
+shareAs: "http://www.edamam.com/recipe/onion-casserole-0644cc4e59dd72849e149fdf9bbbbafc/chickem",
+yield: 6,
+dietLabels: [
+"Low-Carb"
+],
+healthLabels: [
+"Vegetarian",
+"Peanut-Free",
+"Tree-Nut-Free",
+"Alcohol-Free"
+],
+cautions: [
+"Sulfites"
+],
+ingredientLines: [
+"4 mediums Onions, sliced",
+"3 tablespoons Butter or margarine",
+"1 can Sliced mushrooms, drained (2 1/2 oz.)",
+"1 teaspoon Paprika",
+"1 1/2 cups Plain croutons",
+"1/2 cup Shredded carraway seed cheese",
+"1/2 cup Shredded mild cheddar cheese",
+"3 tablespoons Grated parmesan cheese",
+"1 can Cream of chickem soup, (10 3/4 oz.)"
+],
+```
 
 ## Wireframes
 
@@ -24,6 +70,7 @@ Upload images of your wireframes to an image hosting site or add them to an asse
 
 The functionality will then be divided into two separate lists: MPV and PostMVP.  Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.
 
+- Attribution badge
 - Error handling
 
 #### MVP 
