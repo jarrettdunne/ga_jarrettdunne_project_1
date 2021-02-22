@@ -12,13 +12,19 @@ With the frequency with which quarentines and severe weather keep us inside, it 
 
 Specify the API you are using and include a link. Show us a snippet of JSON returned by your API so we know you can access it and get the info you need
 
+EDAMAM
+
+https://developer.edamam.com/edamam-docs-recipe-api
+
 ## Wireframes
 
 Upload images of your wireframes to an image hosting site or add them to an assets folder in your repo and link them here with a description of each specific wireframe.
 
 ### MVP/PostMVP
 
-The functionality will then be divided into two separate lists: MPV and PostMVP.  Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.  
+The functionality will then be divided into two separate lists: MPV and PostMVP.  Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.
+
+- Error handling
 
 #### MVP 
 *These are examples only. Replace with your own MVP features.*
