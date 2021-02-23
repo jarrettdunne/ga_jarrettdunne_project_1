@@ -14,8 +14,6 @@ EDAMAM
 
 Edamam provides nutrition solutions to businesses in the food, health and wellness sectors, leveraging its proprietary cloud-based, structured-data semantic technology platform. Unlike traditional competitors, we deliver value-added nutrition data in real time and at fraction of the cost, saving clients both time and money. Clients include Nestle,Samsung, Epicurious, Gannett and The New York Times.
 
-Base url: https://api.edamam.com
-
 Recipe Search API: https://developer.edamam.com/edamam-docs-recipe-api
 
 The below code snippet has been trimmed to conserve space here and thus, closing brackets were added ass needed to ensure a presentable data structure.
