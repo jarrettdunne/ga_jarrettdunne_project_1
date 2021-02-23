@@ -2,7 +2,7 @@
 
 ## Project Name
 
-Recipe Plan
+Recipe Scheduler
 
 ## Project Description
 
@@ -137,13 +137,7 @@ The below code snippet has been trimmed to conserve space here and thus, closing
 
 ## Code Snippet
 
-Use this section to include a brief code snippet of functionality that you are proud of and a brief description.  
 
-```
-function reverse(string) {
-	// here is the code to reverse a string of text
-}
-```
 
 ## Change Log
 
