@@ -93,19 +93,30 @@ The below code snippet has been trimmed to conserve space here and thus, closing
 
 - Make successful API queries
 - Establish the HTML outline
-- Assemble selection form data
-- Collect form response functionality
+- Selection form data hard coded from API documentation
+- Recipe parameter dropdown menus
+- Diet and health restrictions checkboxs HTML forms
+- Define form data collection logic as usable inputs for an API request
+- Recieved JSON objects handling (i.e. data sorting & filtering)
+- Data displayed in schedule div HTML elements
+- ONE recipe per day
+- Printable content from scheduled recipes elements
 - Regular expression parsing of ingredients
 - Ingredient totals calculations 
+- Ingredient totals data to HTML elements
+- Mobile carousel of scheduled days
+- Menu button links to parts of page
 - Attribution badge
 - CSS Responsive design
 
 #### PostMVP
 
+- MULTIPLE recipes per day
 - Collapsable sections
-- Nuttritional Information section
+- Nutritional Information section
 - Error handling for inadequate queries
-
+- Selection form data pulled from API
+- Interface API request throttling
 
 ## Project Schedule
 
@@ -127,18 +138,29 @@ The below code snippet has been trimmed to conserve space here and thus, closing
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| API Setting Up | H | 3hrs| 0hrs | 0hrs |
+| API Setting Up | H | 1hrs| 0hrs | 0hrs |
+| Functionally parameterized API URLs | M | 3hrs | 0hrs | 0hrs |
 | Outlining HTML | H | 1hrs| 0hrs | 0hrs |
-| JS Event Handling | H | 3hrs | 0hrs| 0hrs |
-| Regular Expression | H | 3hrs | 0hrs | 0hrs |
-| Adding/Removing Data to DOM | M | 2hrs | 0hrs | 0hrs |
-| CSS Design | M | 3hrs | 0hrs | 0hrs |
-| Total | H | 6hrs| 0hrs | 0hrs |
+| Parameterize Dropdown Menus | H | 2hrs | 0hrs| 0hrs |
+| Parameterize Checkboxs HTML Forms | H | 2hrs | 0hrs| 0hrs |
+| Form Data Collection Logic | H | 3hrs | 0hrs| 0hrs |
+| Display Collected Data in DOM | H | 3hrs | 0hrs| 0hrs |
+| Print to Screen Specified Elements | L | 3hrs | 0hrs| 0hrs |
+| Regular Expression Handling | H | 3hrs | 0hrs | 0hrs |
+| Ingredient Totals Calculations  | M | 1hrs | 0hrs| 0hrs |
+| Display Shopping List Data | M | 2hrs | 0hrs | 0hrs |
+| CSS Flexbox Design | M | 2hrs | 0hrs | 0hrs |
+| CSS Carousel Design | M | 3hrs | 0hrs | 0hrs |
+| CSS Collaspible Section Design | L | 3hrs | 0hrs | 0hrs |
+| Main Menu Button Design | L | 2hrs | 0hrs | 0hrs |
+| --- | :---: |  :---: | :---: | :---: |
+| Total | H | 34hrs| 0hrs | 0hrs |
 
 ## Code Snippet
 
-
+```
+```
 
 ## Change Log
 
-
+  (empty)
