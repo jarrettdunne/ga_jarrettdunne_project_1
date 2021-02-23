@@ -153,7 +153,7 @@ The below code snippet has been trimmed to conserve space here and thus, closing
 | CSS Carousel Design | M | 3hrs | 0hrs | 0hrs |
 | CSS Collaspible Section Design | L | 3hrs | 0hrs | 0hrs |
 | Main Menu Button Design | L | 2hrs | 0hrs | 0hrs |
-| --- | :---: |  :---: | :---: | :---: |
+|  |  |   |  |  |
 | Total | H | 34hrs| 0hrs | 0hrs |
 
 ## Code Snippet
