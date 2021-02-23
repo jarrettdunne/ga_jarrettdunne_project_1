@@ -123,7 +123,7 @@ The below code snippet has been trimmed to conserve space here and thus, closing
 |Feb 22-23| Prompt / Wireframes / Priority Matrix / Timeframes | Incomplete
 |Feb 23| Project Approval | Incomplete
 |Feb 24| Core Application Structure (HTML, CSS, etc.) | Incomplete
-|Feb 24| Pseudocode / actual code | Incomplete
+|Feb 25| Pseudocode / actual code | Incomplete
 |Feb 25| Initial Clickable Model  | Incomplete
 |Feb 26| MVP | Incomplete
 |March 1| Presentations | Incomplete
