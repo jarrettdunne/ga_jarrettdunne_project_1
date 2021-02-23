@@ -85,9 +85,9 @@ The below code snippet has been trimmed to conserve space here and thus, closing
 
 ## Wireframes
 
-[Full webpage wireframe](full_wireframe.png)
+[Full webpage wireframe](./images/full_wireframe.png)
 
-[Mobile wireframe](mobile_wireframe.png)
+[Mobile wireframe](./images/mobile_wireframe.png)
 
 #### MVP
 
@@ -121,7 +121,7 @@ The below code snippet has been trimmed to conserve space here and thus, closing
 
 ## Priority Matrix
 
-[Priority Matrix](priority_matrix.png)
+[Priority Matrix](./images/priority_matrix.png)
 
 ## Timeframes
 
