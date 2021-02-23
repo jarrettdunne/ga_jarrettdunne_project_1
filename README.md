@@ -138,7 +138,7 @@ The below code snippet has been trimmed to conserve space here and thus, closing
 | --- | :---: |  :---: | :---: | :---: |
 | API Setting Up | H | 1hrs| 0hrs | 0hrs |
 | Functionally parameterized API URLs | M | 3hrs | 0hrs | 0hrs |
-| Outlining HTML | H | 1hrs| 0hrs | 0hrs |
+| Outlining HTML | H | 3hrs| 0hrs | 0hrs |
 | Parameterize Dropdown Menus | H | 2hrs | 0hrs| 0hrs |
 | Parameterize Checkboxs HTML Forms | H | 2hrs | 0hrs| 0hrs |
 | Form Data Collection Logic | H | 3hrs | 0hrs| 0hrs |
@@ -147,12 +147,12 @@ The below code snippet has been trimmed to conserve space here and thus, closing
 | Regular Expression Handling | H | 3hrs | 0hrs | 0hrs |
 | Ingredient Totals Calculations  | M | 1hrs | 0hrs| 0hrs |
 | Display Shopping List Data | M | 2hrs | 0hrs | 0hrs |
-| CSS Flexbox Design | M | 2hrs | 0hrs | 0hrs |
+| CSS Flexbox Design | M | 3hrs | 0hrs | 0hrs |
 | CSS Carousel Design | M | 3hrs | 0hrs | 0hrs |
 | CSS Collaspible Section Design | L | 3hrs | 0hrs | 0hrs |
 | Main Menu Button Design | L | 2hrs | 0hrs | 0hrs |
 |  |  |   |  |  |
-| Total | H | 34hrs| 0hrs | 0hrs |
+| Total | H | 37hrs| 0hrs | 0hrs |
 
 ## Code Snippet
 
