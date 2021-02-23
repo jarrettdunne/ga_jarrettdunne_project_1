@@ -85,14 +85,15 @@ The below code snippet has been trimmed to conserve space here and thus, closing
 
 ## Wireframes
 
-Upload images of your wireframes to an image hosting site or add them to an assets folder in your repo and link them here with a description of each specific wireframe.
+[Full webpage wireframe](full_wireframe.png)
 
-[Wireframe Image](wireframe.png)
+[Mobile wireframe](mobile_wireframe.png)
 
 ### MVP/PostMVP
 
 The functionality will then be divided into two separate lists: MPV and PostMVP.  Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.
 
+- 
 - Attribution badge
 - Error handling
 
