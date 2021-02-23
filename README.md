@@ -89,32 +89,24 @@ The below code snippet has been trimmed to conserve space here and thus, closing
 
 [Mobile wireframe](mobile_wireframe.png)
 
-### MVP/PostMVP
+#### MVP
 
-The functionality will then be divided into two separate lists: MPV and PostMVP.  Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.
-
-- 
+- Make successful API queries
+- Establish the HTML outline
+- Assemble selection form data
+- Collect form response functionality
+- Regular expression parsing of ingredients
 - Attribution badge
-- Error handling
+- CSS Responsive design
 
-#### MVP 
-*These are examples only. Replace with your own MVP features.*
+#### PostMVP
 
-- Find and use external api 
-- Render data on page 
-- Allow user to choose favorites 
+- Collapsable sections
+- Nuttritional Information section
+- Error handling for inadequate queries
 
-#### PostMVP  
-*These are examples only. Replace with your own Post-MVP features.*
-
-- Add second API
-- Use local storage to save user favorites
 
 ## Project Schedule
-
-This schedule will be used to keep track of your progress throughout the week and align with our expectations.  
-
-You are **responsible** for scheduling time with your squad to seek approval for each deliverable by the end of the corresponding day, excluding `Saturday` and `Sunday`.
 
 |  Day | Deliverable | Status
 |---|---| ---|
@@ -128,7 +120,7 @@ You are **responsible** for scheduling time with your squad to seek approval for
 
 ## Priority Matrix
 
-Include a full list of features that have been prioritized based on the `Time and Importance` Matrix.  Link this image in a similar manner to your wireframes
+[Priority Matrix]()
 
 ## Timeframes
 
@@ -136,11 +128,15 @@ Tell us how long you anticipate spending on each area of development. Be sure to
 
 Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe. Throughout your project, keep track of your Time Invested and Actual Time and update your README regularly.
 
-| Component | Priority | Estimated Time | Time Invested | Actual Time |
+| Component | Priority | Estimated Time | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Adding Form | H | 3hrs| 3.5hrs | 3.5hrs |
-| Working with API | H | 3hrs| 2.5hrs | 2.5hrs |
-| Total | H | 6hrs| 5hrs | 5hrs |
+| API Setting Up | H | 3hrs| 0hrs |
+| Outlining HTML | H | 1hrs| 0hrs |
+| JS Event Handling | H | 3hrs | 0hrs|
+| Regular Expression | H | 3hrs | 0hrs |
+| Adding/Removing Data to DOM | M | 2hrs | 0hrs |
+| CSS Design | M | 3hrs | 0hrs |
+| Total | H | 6hrs| 0hrs |
 
 ## Code Snippet
 
