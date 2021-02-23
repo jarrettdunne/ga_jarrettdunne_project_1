@@ -126,7 +126,7 @@ The below code snippet has been trimmed to conserve space here and thus, closing
 ## Timeframes
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
-| --- | :---: |  :---: | :---: | :---: | :---: |
+| --- | :---: |  :---: | :---: | :---: |
 | API Setting Up | H | 3hrs| 0hrs | 0hrs |
 | Outlining HTML | H | 1hrs| 0hrs | 0hrs |
 | JS Event Handling | H | 3hrs | 0hrs| 0hrs |
