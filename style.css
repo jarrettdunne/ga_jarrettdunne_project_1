@@ -1,0 +1,88 @@
+/* 
+====================================
+  GLOBAL
+==================================== 
+*/
+
+* {
+  border: slategray dashed 1px;
+  margin: 5px;
+  padding: 5px;
+}
+
+/* 
+====================================
+  VARIABLES
+==================================== 
+*/
+
+* {
+  --collapsible-content-border: black solid 0.25rem;
+}
+
+/* 
+====================================
+  header
+==================================== 
+*/
+
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-list {
+  display: flex;
+}
+
+/* 
+====================================
+  schedule
+==================================== 
+*/
+
+.schedule {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.day {
+  height: 300px;
+  width: 150px;
+}
+
+/* 
+====================================
+  collapsible-content
+==================================== 
+*/
+
+.nav-header {
+  border-bottom: var(--collapsible-content-border);
+}
+
+.collapsible-content-header {
+  display: flex;
+  border-top: var(--collapsible-content-border);
+  border-bottom: var(--collapsible-content-border);
+}
+
+.collapsible-content-inner {
+  margin: auto;
+}
+
+
+/* 
+====================================
+  carousel
+==================================== 
+*/
+
+
+
+/* 
+====================================
+  footer
+==================================== 
+*/
+
