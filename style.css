@@ -1,23 +1,30 @@
 /* 
 ====================================
-  GLOBAL
+  GLOBALS
 ==================================== 
 */
 
 * {
-  border: slategray dashed 1px;
-  margin: 5px;
-  padding: 5px;
-}
+  /* DARK THEME */
+  background-color: #313131;
+  /* border: slategray dashed 1px; */
+  color: aliceblue;
+  --collapsible-content-border: aliceblue solid 0.125rem;
+  --border-color: aliceblue solid 1px;
 
-/* 
-====================================
-  VARIABLES
-==================================== 
-*/
+  /* LIGHT THEME */
+  /* border: black dashed 1px;
+  color: black;
+  --collapsible-content-border: black solid 0.125rem;
+  --border-color: black solid 1px;
+  background-color: white; */
 
-* {
-  --collapsible-content-border: black solid 0.25rem;
+  margin: 2.55px;
+  padding: 2.55px;
+
+    /* margin: 0;
+    padding: 0; */
+  font-family: "Lato", sans-serif;
 }
 
 /* 
@@ -26,6 +33,10 @@
 ==================================== 
 */
 
+.nav-main {
+  border-bottom: var(--collapsible-content-border);
+}
+
 .nav-header {
   display: flex;
   justify-content: space-between;
@@ -33,6 +44,33 @@
 
 .nav-list {
   display: flex;
+  list-style-type: none;
+}
+
+/* 
+====================================
+  selection
+==================================== 
+*/
+
+#diet,
+#health {
+  list-style: none;
+  border: aliceblue solid 1px;
+}
+
+#health {
+  column-count: 3;
+}
+
+.checkboxes {
+  display: flex;
+}
+
+input[type='checkbox'] + label  {
+  /* display: flex;
+  flex-direction: column; */
+  cursor: pointer;
 }
 
 /* 
@@ -41,14 +79,20 @@
 ==================================== 
 */
 
-.schedule {
+.recipe-carousel {
   display: flex;
   justify-content: space-evenly;
 }
 
-.day {
+.recipe {
+  border: var(--border-color);
   height: 300px;
-  width: 150px;
+  width: 300px;
+}
+
+.day {
+  /* width: 100%; */
+  border-bottom: aliceblue solid 1px;
 }
 
 /* 
@@ -57,20 +101,31 @@
 ==================================== 
 */
 
-.nav-header {
+.collapsible-content-header {
+  cursor: pointer;
+  display: flex;
+  /* border-top: var(--collapsible-content-border); */
   border-bottom: var(--collapsible-content-border);
 }
 
-.collapsible-content-header {
-  display: flex;
-  border-top: var(--collapsible-content-border);
-  border-bottom: var(--collapsible-content-border);
+h2:hover {
+  background-color: aliceblue;
+  color: #313131;
+  border-radius: 0.12em;
+  transition: all 0.25s;
 }
 
 .collapsible-content-inner {
-  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
 }
 
+.section-button {
+  width: fit-content;
+  align-items: center;
+}
 
 /* 
 ====================================
@@ -78,7 +133,92 @@
 ==================================== 
 */
 
+.recipe-wrapper {
+  overflow: hidden;
+  width: 90%;
+  margin: auto;
+}
 
+.recipe-wrapper * {
+  box-sizing: border-box;
+}
+
+.carousel {
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.recipe {
+  opacity: 0;
+  position: absolute;
+  top:0;
+  width: 100%;
+  margin: auto;
+  padding: 1rem 4rem;
+  z-index: 100;
+  transition: transform .5s, opacity .5s, z-index .5s;
+}
+
+.recipe.initial,
+.recipe.active {
+  opacity: 1;
+  position: relative;
+  z-index: 900;
+}
+
+.recipe.prev,
+.recipe.next {
+  z-index: 800;
+}
+
+.recipe.prev {
+  transform: translateX(-100%);
+}
+
+.recipe.next {
+  transform: translateX(100%);
+}
+
+.recipe__button--next,
+.recipe__button--prev {
+  position: absolute;
+  top:50%;
+  width: 3rem;
+  height: 3rem;
+  background-color: #FFF;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  cursor: pointer; 
+  z-index: 1001; /* Sit on top of everything */
+  border:1px solid black;
+}
+
+.recipe__button--next {
+  right: 0;
+}
+
+.recipe__button--prev {
+  left: 0;
+}
+
+.recipe__button--next::after,
+.recipe__button--prev::after {
+  content: " ";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 50%;
+  left: 54%;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  transform: translate(-50%, -50%) rotate(135deg);
+}
+
+.recipe__button--next::after {
+  left: 47%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
 
 /* 
 ====================================
@@ -86,3 +226,57 @@
 ==================================== 
 */
 
+footer {
+  border-top: var(--collapsible-content-border);
+  text-align: center;
+}
+
+/* 
+====================================
+  checkbox
+==================================== 
+*/
+
+input[type='checkbox']:checked {
+  background-color: red;
+}
+
+/* 
+====================================
+  button styling
+  source: https://fdossena.com/?p=html5cool/buttons/i.frag
+==================================== 
+*/
+#option-cuisine,
+#option-meal,
+#option-dish,
+.section-button {
+  cursor: pointer;
+  display: inline-block;
+  padding: 0.35em 1.2em;
+  border: 0.1em solid #ffffff;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 0.12em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: #ffffff;
+  text-align: center;
+  /* transition: all 0.2s; */
+}
+
+#option-cuisine,
+#option-meal,
+#option-dish,
+.section-button:hover {
+  color: #000000;
+  background-color: #ffffff;
+}
+
+@media all and (max-width: 30em) {
+   .section-button {
+    display: block;
+    margin: 0.4em auto;
+  }
+}

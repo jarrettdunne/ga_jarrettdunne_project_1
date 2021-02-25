@@ -5,88 +5,158 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  
   <script defer src="./main.js"></script>
+  <script defer src="load.js"></script>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
   <title>Recipe Scheduler</title>
 </head>
 <body>
-  <header>
+  <header class="nav-main">
     <div class="nav-header">
       <h1>Recipe Scheduler</h1>
       <nav>
         <ul class="nav-list">
           <li>
-            <a href="" class="nav-item"></a>
+            <a href="#selection-id" class="nav-item section-button">Selection</a>
           </li>
           <li>
-            <a href="" class="nav-item"></a>
+            <a href="#schedule-id" class="nav-item section-button">Schedule</a>
           </li>
           <li>
-            <a href="" class="nav-item"></a>
+            <a href="#shopping-id" class="nav-item section-button">Shopping</a>
           </li>
         </ul>
       </nav>
     </div>
     <div>
-      <p></p>
+      <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui 
+        blanditiis praesentium voluptatum deleniti atque corrupti quos 
+        dolores et quas molestias excepturi sint occaecati cupiditate non 
+        provident, similique sunt in culpa qui officia deserunt mollitia 
+        animi, id est laborum et dolorum fuga. Et harum quidem rerum 
+        facilis est et expedita distinctio. Nam libero tempore, cum soluta 
+        nobis est eligendi optio cumque nihil impedit quo minus id quod 
+        maxime placeat facere possimus, omnis voluptas assumenda est, 
+        omnis dolor repellendus. Temporibus autem quibusdam et aut officiis 
+        debitis aut rerum necessitatibus saepe eveniet ut et voluptates 
+        repudiandae sint et molestiae non recusandae. Itaque earum rerum 
+        hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus 
+        maiores alias consequatur aut perferendis doloribus asperiores 
+        repellat.</p>
     </div>
   </header>
   <main>
-    <div class="collapsible">
-      <div class="collapsible-content-header">
+    <div class="collapsible" id="selection-id">
+      <div class="collapsible-content-header selection">
         <h2>Selection</h2>
         <div></div>
       </div>
-      <div class="collapsible-content">
-        <div class="collapsible-content-inner">
-          <div class="selection">
-            <form></form>
-          </div>
-          <input type="button" value="">
+      <div class="collapsible-content selection">
+        <div class="collapsible-content-inner selection">
+          <form class="selection">
+            <div>
+              Cuisine Type: <select name="" id="option-cuisine">
+                <option disabled selected value="">Select cuisine type</option>
+              </select>
+              
+              Meal Type: <select name="" id="option-meal">
+                <option disabled selected value="">Select meal type</option>
+              </select>
+              Dish Type: <select name="" id="option-dish">
+                <option disabled selected value="">Select dish type</option>
+              </select>
+            </div>
+            <div class="checkboxes">
+
+              <div class="diet-checkboxes">
+                <p>Diet</p>
+                <ul id="diet"></ul>
+              </div>
+
+              <div class="health-checkboxes">
+                <p>Health</p>
+                <ul id="health"></ul>
+              </div>
+
+            </div>
+          </form>
+          <input type="submit" value="Plan" class="section-button">
         </div>
       </div>
     </div>
-    <div class="collapsible">
-      <div class="collapsible-content-header">
+    <div class="collapsible" id="schedule-id">
+      <div class="collapsible-content-header schedule">
         <h2>Schedule</h2>
         <div></div>
       </div>
-      <div class="collapsible-content">
-        <div class="collapsible-content-inner">
-          <div class="schedule">
-            <div class="day">
-              <div class="recipe"></div>
-            </div>
-            <div class="day">
-              <div class="recipe"></div>
-            </div>
-            <div class="day">
-              <div class="recipe"></div>
-            </div>
-            <div class="day">
-              <div class="recipe"></div>
-            </div>
-            <div class="day">
-              <div class="recipe"></div>
+      <div class="collapsible-content schedule">
+        <div class="collapsible-content-inner schedule">
+          <div class="recipe-wrapper">
+            <div class="carousel">
+              <div class="recipe initial">
+                <h3 class="day">monday</h3>
+                <p class="monday"></p>
+              </div>
+              <div class="recipe">
+                <h3 class="day">tuesday</h3>
+              </div>
+              <div class="recipe">
+                <h3 class="day">wednesday</h3>
+              </div>
+              <div class="recipe">
+                <h3 class="day">thursday</h3>
+              </div>
+              <div class="recipe">
+                <h3 class="day">friday</h3>
+              </div>
+
+              <div class="recipe__button--next"></div>
+              <div class="recipe__button--prev"></div>
             </div>
           </div>
-          <input type="button" value="">
+          <input type="button" value="Print" class="section-button">
         </div>
       </div>
     </div>
-    <div class="collapsible">
-      <div class="collapsible-content-header">
+    <div class="collapsible" id="shopping-id">
+      <div class="collapsible-content-header shopping">
         <h2>Shopping</h2>
         <div></div>
       </div>
-      <div class="collapsible-content">
-        <div class="collapsible-content-inner">
-          <div class="shopping"></div>
-          <input type="button" value="">
+      <div class="collapsible-content shopping">
+        <div class="collapsible-content-inner shopping">
+          <div class="shopping">
+            <ol>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ol>
+          </div>
+          <input type="button" value="Print" class="section-button">
         </div>
       </div>
     </div>
   </main>
-  <footer></footer>
+  <footer>&copy;DunneByDesign 2021</footer>
 </body>
 </html>
