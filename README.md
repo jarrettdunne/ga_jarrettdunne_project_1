@@ -109,12 +109,12 @@ The below code snippet has been trimmed to conserve space here and thus, closing
 
 #### PostMVP
 
-- MULTIPLE recipes per day
-- Collapsable sections
-- Nutritional Information section
-- Error handling for inadequate queries
-- Selection form data pulled from API
-- Interface API request throttling
+- [ ] MULTIPLE recipes per day
+- [x] Collapsable sections
+- [ ] Nutritional Information section
+- [ ] Error handling for inadequate queries
+- [ ] Selection form data pulled from API
+- [ ] Interface API request throttling
 
 ## Project Schedule
 
