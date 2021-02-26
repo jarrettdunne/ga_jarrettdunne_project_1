@@ -8,6 +8,10 @@ Recipe Scheduler
 
 With the frequency with which quarentines and severe weather keep us inside, it is highly probable that people are suffering from food boredom. This app tries to remedy that with randomly selected recipes for each day of the week as well as the cumulative totals of the ingredients for a convienent shopping list. In addition, it will allow diet and health restrictions as parameters.  
 
+The intent of this project was to create a application on top of the EDAMAM Recipe Search API that would display a recipe on each day of the week as well as consoildating the ingredients from each recipe in a shopping list. Both the recipes and the shopping list would be printable. The recipes would be requested with an authorization ID and key and specified URL tags; the tags were defined in the APIs documention. 
+
+However, the application does not work as intended due to the unresponsiveness of the API to its own parameters. Thus, some changes have been made to accomdate for the now known limited capabilities of the EDAMAM Recipe Search API.
+
 ## API and Data Sample
 
 EDAMAM

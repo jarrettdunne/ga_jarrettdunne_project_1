@@ -106,12 +106,17 @@ ul {
   justify-content: center;
 }
 
+.selection-option {
+  background-color: aliceblue;
+  color: #313131;
+}
+
 #selection-dropdowns {
   display: flex;
   flex-direction: row;
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 720px) {
   #selection-dropdowns {
     flex-direction: column;
   }

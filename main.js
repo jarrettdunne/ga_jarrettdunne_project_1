@@ -326,9 +326,9 @@ selectionForm.addEventListener('submit', async (event) => {
   let input = ''
   
   event.preventDefault()
-  // const visibleSchedule = document.querySelector('.collapsible-content-inner.schedule')
-  // visibleSchedule.style.visibility = 'visible'
-  // visibleSchedule.style.maxHeight = 'none'
+  const visibleSchedule = document.querySelector('.collapsible-content-inner.schedule')
+  visibleSchedule.style.visibility = 'visible'
+  visibleSchedule.style.maxHeight = 'none'
 
   // const visibleSelection = document.querySelector('.collapsible-content-inner.selection')
   // visibleSelection.style.visibility = 'hidden'
