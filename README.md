@@ -91,21 +91,21 @@ The below code snippet has been trimmed to conserve space here and thus, closing
 
 - [x] Make successful API queries
 - [x] Establish the HTML outline
-- [ ] Selection form data hard coded from API documentation
+- [x] Selection form data hard coded from API documentation
 - [x] Recipe parameter dropdown menus
 - [x] Diet and health restrictions checkboxs HTML forms
-- [ ] Define form data collection logic as usable inputs for an API request
-- [ ] Recieved JSON objects handling (i.e. data sorting & filtering)
-- [ ] Data displayed in schedule div HTML elements
-- [ ] ONE recipe per day
+- [x] Define form data collection logic as usable inputs for an API request
+- [x] Recieved JSON objects handling (i.e. data sorting & filtering)
+- [x] Data displayed in schedule div HTML elements
+- [x] ONE recipe per day
 - [ ] Printable content from scheduled recipes elements
 - [ ] Regular expression parsing of ingredients
 - [ ] Ingredient totals calculations 
-- [ ] Ingredient totals data to HTML elements
+- [x] Ingredient totals data to HTML elements
 - [x] Mobile carousel of scheduled days
 - [x] Menu button links to parts of page
-- [ ] Attribution badge
-- [ ] CSS Responsive design
+- [x] Attribution badge
+- [x] CSS Responsive design
 
 #### PostMVP
 

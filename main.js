@@ -412,3 +412,10 @@ selectionForm.addEventListener('submit', async (event) => {
     ol.appendChild(li)
   })
 })
+
+const printButton = document.querySelector('#print-schedule')
+printButton.addEventListener('click', () => {
+  const HTML = document.querySelector('.recipe.active')
+  const recipeWindow = window.open('', 'Print Recipe', `status=1,width=${300},height=${400}`)
+  recipeWindow.document.write(HTML.innerHTML)
+})

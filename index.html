@@ -8,7 +8,7 @@
   
   <script defer src="./carousel.js"></script>
   <script defer src="./main.js"></script>
-  
+  <script src="https://developer.edamam.com/attribution/badge.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
   <title>Recipe Scheduler</title>
@@ -121,7 +121,7 @@
               <div class="recipe__button--prev"></div>
             </div>
           </div>
-          <input type="button" value="Print" class="section-button">
+          <input type="button" value="Print" class="section-button print" id="print-schedule">
         </div>
       </div>
     </div>
@@ -135,11 +135,14 @@
           <div class="shopping">
             <ol id='shopping-list'></ol>
           </div>
-          <input type="button" value="Print" class="section-button">
+          <input type="button" value="Print" class="section-button print" id="print-shopping">
         </div>
       </div>
     </div>
   </main>
-  <footer>&copy;DunneByDesign 2021</footer>
+  <footer>
+    <div id="edamam-badge" data-color="white"></div>
+    <div>&copy;DunneByDesign 2021</div>
+  </footer>
 </body>
 </html>
