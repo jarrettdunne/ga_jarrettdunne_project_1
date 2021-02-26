@@ -98,7 +98,7 @@ The below code snippet has been trimmed to conserve space here and thus, closing
 - [x] Recieved JSON objects handling (i.e. data sorting & filtering)
 - [x] Data displayed in schedule div HTML elements
 - [x] ONE recipe per day
-- [ ] Printable content from scheduled recipes elements
+- [x] Printable content from scheduled recipes elements
 - [ ] Regular expression parsing of ingredients
 - [ ] Ingredient totals calculations 
 - [x] Ingredient totals data to HTML elements
