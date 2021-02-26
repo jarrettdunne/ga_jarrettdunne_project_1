@@ -308,7 +308,8 @@ async function getData(url) {
     const response = await axios.get(url)
     return response.data.hits
   } catch (err) {
-    console.log(err)
+    console.log(err.response)
+    return err.response
   }
 }
 
@@ -321,29 +322,36 @@ function remove(element) {
 const selectionForm = document.querySelector('#selection-form')
 
 selectionForm.addEventListener('submit', async (event) => {
+  event.preventDefault()
+
   const APP_ID = '8be4e382'
   const APP_KEY = '4b5c55a4d169b0a5913dc8fbc9764f49'
-  let input = ''
-  
-  event.preventDefault()
+
+  const shoppingOrderedList = document.querySelector('#shopping-list')
+  const visibleSelection = document.querySelector('.collapsible-content-inner.selection')
   const visibleSchedule = document.querySelector('.collapsible-content-inner.schedule')
-  visibleSchedule.style.visibility = 'visible'
-  visibleSchedule.style.maxHeight = 'none'
-
-  // const visibleSelection = document.querySelector('.collapsible-content-inner.selection')
-  // visibleSelection.style.visibility = 'hidden'
-  // visibleSelection.style.maxHeight = '0'
-
-  // const visibleShopping = document.querySelector('.collapsible-content-inner.shopping')
-  // visibleShopping.style.visibility = 'visible'
-  // visibleShopping.style.maxHeight = 'none'
+  const visibleShopping = document.querySelector('.collapsible-content-inner.shopping')
 
   const checkboxes = document.querySelectorAll('.diet-checkbox')
   const selectionURL = document.querySelector('#selection-url')
   const search = document.querySelector('#search-box')
 
+  const days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
+  
   let label = new String()
   let type = new String()
+  let input = ''
+  
+  const BASE_URL = (input) => `https://api.edamam.com/search?q=${input}&app_id=${APP_ID}&app_key=${APP_KEY}`
+
+  visibleSchedule.style.visibility = 'visible'
+  visibleSchedule.style.maxHeight = 'none'
+
+  // visibleSelection.style.visibility = 'hidden'
+  // visibleSelection.style.maxHeight = '0'
+
+  visibleShopping.style.visibility = 'visible'
+  visibleShopping.style.maxHeight = 'none'
 
   if (search) {
     input = parse(search.value)
@@ -362,60 +370,71 @@ selectionForm.addEventListener('submit', async (event) => {
     }
   })
   
-  const BASE_URL = `https://api.edamam.com/search?q=${input}&app_id=${APP_ID}&app_key=${APP_KEY}`
-  let url = BASE_URL + type + label
-  selectionURL.innerText = url
-  selectionURL.href = url
-  selectionURL.target = '_blank'
+  
+  let url = BASE_URL(input) + type + label
+  console.log(url)
+  // selectionURL.innerText = url
+  // selectionURL.href = url
+  // selectionURL.target = '_blank'
 
   let shoppingList = new Array()
   
-  const days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
+  
   const hits = await getData(url)
-  console.log(hits)
+  console.log(hits.data)
 
-  days.forEach(i => {
-    const arr = hits[days.indexOf(i)].recipe.ingredients
-    const monday = document.querySelector(`#${i}`)
-    const h3 = document.createElement('h3')
-    const container = document.querySelector(`#${i}`)
-    remove(container)
+  if (hits.status != 403) {
+    selectionURL.innerText = ''
+    days.forEach(i => {
+      const arr = hits[days.indexOf(i)].recipe.ingredients
+      const monday = document.querySelector(`#${i}`)
+      const h3 = document.createElement('h3')
+      const container = document.querySelector(`#${i}`)
+      remove(container)
 
-    h3.textContent = hits[days.indexOf(i)].recipe.label
-    monday.appendChild(h3)
+      h3.textContent = hits[days.indexOf(i)].recipe.label
+      monday.appendChild(h3)
 
-    arr.forEach(i => {
-      const p = document.createElement('p')
+      arr.forEach(i => {
+        const p = document.createElement('p')
       
-      p.textContent = i.text
-      shoppingList.push(i.text)
-      monday.appendChild(p)
+        p.textContent = i.text
+        shoppingList.push(i.text)
+        monday.appendChild(p)
+      })
+    
+      if (hits[days.indexOf(i)].recipe.url) {
+        const a = document.createElement('a')
+        a.href = hits[days.indexOf(i)].recipe.url
+        a.innerText = 'Directions'
+        a.className = 'section-button'
+        a.target = '_blank'
+        monday.appendChild(a)
+      }
     })
-    
-    if (hits[days.indexOf(i)].recipe.url) {
-      const a = document.createElement('a')
-      a.href = hits[days.indexOf(i)].recipe.url
-      a.innerText = 'Directions'
-      a.className = 'section-button'
-      a.target = '_blank'
-      monday.appendChild(a)
-    }
 
-  })
-
-  const ol = document.querySelector('#shopping-list')
-  remove(ol)
-  shoppingList.forEach(i => {
+    const shoppingOrderedList = document.querySelector('#shopping-list')
+    remove(shoppingOrderedList)
+    shoppingList.forEach(i => {
     
-    const li = document.createElement('li')
-    li.innerText = i
-    ol.appendChild(li)
-  })
+      const li = document.createElement('li')
+      li.innerText = i
+      shoppingOrderedList.appendChild(li)
+    })
+  } else {
+    const a = document.createElement('a')
+    selectionURL.innerText = hits.data
+    selectionURL.href = ''
+    selectionURL.style.textDecoration = 'none'
+    remove(shoppingOrderedList)
+  }
 })
 
 const printButton = document.querySelector('#print-schedule')
+
 printButton.addEventListener('click', () => {
   const HTML = document.querySelector('.recipe.active')
   const recipeWindow = window.open('', 'Print Recipe', `status=1,width=${300},height=${400}`)
   recipeWindow.document.write(HTML.innerHTML)
 })
+
