@@ -1,7 +1,3 @@
-
-const FULL_URL = 'https://api.edamam.com/search?q=chicken&app_id=8be4e382&app_key=4b5c55a4d169b0a5913dc8fbc9764f49&from=0&to=3&calories=591-722&health=alcohol-free'
-
-// console.log(BASE_URL)
 const labels = {
   "diet": [
     {
@@ -316,6 +312,12 @@ async function getData(url) {
   }
 }
 
+function remove(element) {
+  while (element.lastChild) {
+    element.removeChild(element.lastChild)
+  }
+}
+
 const selectionForm = document.querySelector('#selection-form')
 
 selectionForm.addEventListener('submit', async (event) => {
@@ -324,17 +326,17 @@ selectionForm.addEventListener('submit', async (event) => {
   let input = ''
   
   event.preventDefault()
-  const visibleSchedule = document.querySelector('.collapsible-content-inner.schedule')
-  visibleSchedule.style.visibility = 'visible'
-  visibleSchedule.style.maxHeight = 'none'
+  // const visibleSchedule = document.querySelector('.collapsible-content-inner.schedule')
+  // visibleSchedule.style.visibility = 'visible'
+  // visibleSchedule.style.maxHeight = 'none'
 
-  const visibleSelection = document.querySelector('.collapsible-content-inner.selection')
-  visibleSelection.style.visibility = 'hidden'
-  visibleSelection.style.maxHeight = '0'
+  // const visibleSelection = document.querySelector('.collapsible-content-inner.selection')
+  // visibleSelection.style.visibility = 'hidden'
+  // visibleSelection.style.maxHeight = '0'
 
-  const visibleShopping = document.querySelector('.collapsible-content-inner.shopping')
-  visibleShopping.style.visibility = 'visible'
-  visibleShopping.style.maxHeight = 'none'
+  // const visibleShopping = document.querySelector('.collapsible-content-inner.shopping')
+  // visibleShopping.style.visibility = 'visible'
+  // visibleShopping.style.maxHeight = 'none'
 
   const checkboxes = document.querySelectorAll('.diet-checkbox')
   const selectionURL = document.querySelector('#selection-url')
@@ -377,9 +379,7 @@ selectionForm.addEventListener('submit', async (event) => {
     const monday = document.querySelector(`#${i}`)
     const h3 = document.createElement('h3')
     const container = document.querySelector(`#${i}`)
-    while (container.lastChild) {
-      container.removeChild(container.lastChild)
-    }
+    remove(container)
 
     h3.textContent = hits[days.indexOf(i)].recipe.label
     monday.appendChild(h3)
@@ -392,20 +392,23 @@ selectionForm.addEventListener('submit', async (event) => {
       monday.appendChild(p)
     })
     
-    const a = document.createElement('a')
-    a.href = hits[days.indexOf(i)].recipe.url
-    a.innerText = 'Directions'
-    a.className = 'section-button'
-    a.target = '_blank'
-    monday.appendChild(a)
+    if (hits[days.indexOf(i)].recipe.url) {
+      const a = document.createElement('a')
+      a.href = hits[days.indexOf(i)].recipe.url
+      a.innerText = 'Directions'
+      a.className = 'section-button'
+      a.target = '_blank'
+      monday.appendChild(a)
+    }
+
   })
 
+  const ol = document.querySelector('#shopping-list')
+  remove(ol)
   shoppingList.forEach(i => {
-    const item = document.querySelector('#shopping-list')
+    
     const li = document.createElement('li')
     li.innerText = i
-    item.appendChild(li)
+    ol.appendChild(li)
   })
-  
-
 })
