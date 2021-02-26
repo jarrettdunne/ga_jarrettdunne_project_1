@@ -13,8 +13,8 @@
   --border-color: aliceblue solid 1px;
 
   /* LIGHT THEME */
-  /* border: black dashed 1px;
-  color: black;
+  /* border: black dashed 1px; */
+  /* color: black;
   --collapsible-content-border: black solid 0.125rem;
   --border-color: black solid 1px;
   background-color: white; */
@@ -42,12 +42,12 @@ ul {
 ==================================== 
 */
 
-/* #selection-dropdowns {
+#selection-dropdowns {
   visibility: collapse;
   max-height: 0;
 }
 
-.checkboxes {
+/* .checkboxes {
   visibility: collapse;
   max-height: 0;
 } */
