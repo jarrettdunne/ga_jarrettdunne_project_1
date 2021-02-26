@@ -78,6 +78,10 @@ ul {
 ==================================== 
 */
 
+.search-box-wrapper {
+  margin: 1rem;
+}
+
 .selection {
   display: flex;
   flex-direction: column;
@@ -114,6 +118,11 @@ ul {
 #selection-dropdowns {
   display: flex;
   flex-direction: row;
+}
+
+.dropdown-label {
+  padding: 5px;
+  width: max-content;
 }
 
 @media screen and (max-width: 720px) {
