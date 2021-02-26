@@ -19,12 +19,21 @@
   --border-color: black solid 1px;
   background-color: white; */
 
-  margin: 2.55px;
-  padding: 2.55px;
+  margin: 2px;
+  padding: 2px;
 
     /* margin: 0;
     padding: 0; */
   font-family: "Lato", sans-serif;
+}
+
+body {
+  min-width: 640px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
 }
 
 /* 
@@ -53,23 +62,52 @@
 ==================================== 
 */
 
+.selection {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* align-items: center; */
+}
+
+#selection-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center ;
+}
+
 #diet,
 #health {
   list-style: none;
   border: aliceblue solid 1px;
 }
 
-#health {
+#diet {
   column-count: 3;
 }
 
 .checkboxes {
+  visibility: collapse;
+  max-height: 0;
   display: flex;
+  justify-content: center;
+}
+
+#selection-dropdowns {
+  visibility: collapse;
+  max-height: 0;
+}
+
+/* 
+====================================
+  checkbox
+==================================== 
+*/
+
+input[type='checkbox']:checked {
+  background-color: red;
 }
 
 input[type='checkbox'] + label  {
-  /* display: flex;
-  flex-direction: column; */
   cursor: pointer;
 }
 
@@ -79,6 +117,11 @@ input[type='checkbox'] + label  {
 ==================================== 
 */
 
+.schedule {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 .recipe-carousel {
   display: flex;
   justify-content: space-evenly;
@@ -86,13 +129,25 @@ input[type='checkbox'] + label  {
 
 .recipe {
   border: var(--border-color);
-  height: 300px;
+  min-height: 300px;
   width: 300px;
 }
 
 .day {
   /* width: 100%; */
   border-bottom: aliceblue solid 1px;
+}
+
+/* 
+====================================
+  shopping
+==================================== 
+*/
+
+.shopping {
+  display: flex;
+  flex-direction: column;
+
 }
 
 /* 
@@ -119,7 +174,12 @@ h2:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
 
+.collapsible-content-inner.schedule,
+.collapsible-content-inner.shopping {
+  visibility: hidden;
+  max-height: 0;
 }
 
 .section-button {
@@ -130,6 +190,7 @@ h2:hover {
 /* 
 ====================================
   carousel
+  source: https://medium.com/@marcusmichaels/how-to-build-a-carousel-from-scratch-in-vanilla-js-9a096d3b98c9
 ==================================== 
 */
 
@@ -231,15 +292,6 @@ footer {
   text-align: center;
 }
 
-/* 
-====================================
-  checkbox
-==================================== 
-*/
-
-input[type='checkbox']:checked {
-  background-color: red;
-}
 
 /* 
 ====================================
@@ -259,7 +311,6 @@ input[type='checkbox']:checked {
   border-radius: 0.12em;
   box-sizing: border-box;
   text-decoration: none;
-  font-family: "Roboto", sans-serif;
   font-weight: 300;
   color: #ffffff;
   text-align: center;
@@ -271,6 +322,24 @@ input[type='checkbox']:checked {
 #option-dish,
 .section-button:hover {
   color: #000000;
+  background-color: #ffffff;
+}
+
+.section-button {
+  font-weight: bold;
+}
+
+#search-box {
+  cursor: text;
+  display: inline-block;
+  padding: 0.35em 1.2em;
+  border: 0.1em solid #ffffff;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 0.12em;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: #313131;
+  text-align: left;
   background-color: #ffffff;
 }
 

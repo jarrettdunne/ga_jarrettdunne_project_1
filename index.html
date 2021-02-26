@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   
+  <script defer src="./carousel.js"></script>
   <script defer src="./main.js"></script>
-  <script defer src="load.js"></script>
   
   <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
@@ -20,7 +20,7 @@
       <nav>
         <ul class="nav-list">
           <li>
-            <a href="#selection-id" class="nav-item section-button">Selection</a>
+            <a href="#selection-id" class="nav-item section-button">search</a>
           </li>
           <li>
             <a href="#schedule-id" class="nav-item section-button">Schedule</a>
@@ -32,20 +32,11 @@
       </nav>
     </div>
     <div>
-      <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui 
-        blanditiis praesentium voluptatum deleniti atque corrupti quos 
-        dolores et quas molestias excepturi sint occaecati cupiditate non 
-        provident, similique sunt in culpa qui officia deserunt mollitia 
-        animi, id est laborum et dolorum fuga. Et harum quidem rerum 
-        facilis est et expedita distinctio. Nam libero tempore, cum soluta 
-        nobis est eligendi optio cumque nihil impedit quo minus id quod 
-        maxime placeat facere possimus, omnis voluptas assumenda est, 
-        omnis dolor repellendus. Temporibus autem quibusdam et aut officiis 
-        debitis aut rerum necessitatibus saepe eveniet ut et voluptates 
-        repudiandae sint et molestiae non recusandae. Itaque earum rerum 
-        hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus 
-        maiores alias consequatur aut perferendis doloribus asperiores 
-        repellat.</p>
+      <p>With the frequency with which quarentines and severe weather keep us 
+        inside, it is highly probable that people are suffering from food boredom. 
+        This app tries to remedy that with randomly selected recipes for each day 
+        of the week as well as the cumulative totals of the ingredients for a 
+        convienent shopping list.</p>
     </div>
   </header>
   <main>
@@ -56,34 +47,35 @@
       </div>
       <div class="collapsible-content selection">
         <div class="collapsible-content-inner selection">
-          <form class="selection">
+          <form class="selection" id="selection-form">
             <div>
+              <label for="search">Search:</label>
+              <input type="text" name="search" id="search-box" class="section-box">
+              
+            </div>
+            <div id="selection-dropdowns">
               Cuisine Type: <select name="" id="option-cuisine">
-                <option disabled selected value="">Select cuisine type</option>
+                <option disabled selected value=""></option>
               </select>
               
               Meal Type: <select name="" id="option-meal">
-                <option disabled selected value="">Select meal type</option>
+                <option disabled selected value=""></option>
               </select>
               Dish Type: <select name="" id="option-dish">
-                <option disabled selected value="">Select dish type</option>
+                <option disabled selected value=""></option>
               </select>
             </div>
             <div class="checkboxes">
-
               <div class="diet-checkboxes">
-                <p>Diet</p>
+                <p>Diet & Health Labels</p>
                 <ul id="diet"></ul>
               </div>
-
-              <div class="health-checkboxes">
-                <p>Health</p>
-                <ul id="health"></ul>
-              </div>
-
             </div>
+            <input type="submit" value="Plan" class="section-button" id="selection-button">
           </form>
-          <input type="submit" value="Plan" class="section-button">
+          <div>
+            <a id="selection-url"></a>
+          </div>
         </div>
       </div>
     </div>
@@ -98,19 +90,31 @@
             <div class="carousel">
               <div class="recipe initial">
                 <h3 class="day">monday</h3>
-                <p class="monday"></p>
+                <div id="monday"></div>
               </div>
               <div class="recipe">
                 <h3 class="day">tuesday</h3>
+                <div id="tuesday"></div>
               </div>
               <div class="recipe">
                 <h3 class="day">wednesday</h3>
+                <div id="wednesday"></div>
               </div>
               <div class="recipe">
                 <h3 class="day">thursday</h3>
+                <div id="thursday"></div>
               </div>
               <div class="recipe">
                 <h3 class="day">friday</h3>
+                <div id="friday"></div>
+              </div>
+              <div class="recipe">
+                <h3 class="day">saturday</h3>
+                <div id="saturday"></div>
+              </div>
+              <div class="recipe">
+                <h3 class="day">sunday</h3>
+                <div id="sunday"></div>
               </div>
 
               <div class="recipe__button--next"></div>
@@ -129,28 +133,7 @@
       <div class="collapsible-content shopping">
         <div class="collapsible-content-inner shopping">
           <div class="shopping">
-            <ol>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-            </ol>
+            <ol id='shopping-list'></ol>
           </div>
           <input type="button" value="Print" class="section-button">
         </div>
