@@ -1,3 +1,9 @@
+/* 
+============================================================================
+  API parameter data & misc functions & global variable declarations
+============================================================================
+*/
+
 const labels = {
   "diet": [
     {
@@ -243,17 +249,28 @@ const values = {
   }
 }
 
+const stopwords = {
+  "measurement": []
+}
+
 function parse(str) {
   return str.trim().toLowerCase().replace(/\s/g, '-')
 }
 
-// function pprint(array) {
-//   array.forEach(i => {
-//     console.log(`https://api.edamam.com/search?q=&app_id=${APP_ID}&app_key=${APP_KEY}&health=${parse(i)}`)
-//   })
-// }
+function remove(element) {
+  while (element.lastChild) {
+    element.removeChild(element.lastChild)
+  }
+}
 
 const cchNodeList = document.querySelectorAll('.collapsible-content-header')
+const selectionForm = document.querySelector('#selection-form')
+
+/* 
+============================================================================
+  Collapsible section event handler 
+============================================================================
+*/
 
 cchNodeList.forEach(i => {
   i.addEventListener('click', function () {
@@ -272,7 +289,11 @@ cchNodeList.forEach(i => {
   })
 })
 
-
+/* 
+============================================================================
+  Add checkbox and dropdown data to DOM
+============================================================================
+*/
 function checkboxValues(data) {
   const diet = document.querySelector('#diet')
   Object.keys(data).forEach(i => {
@@ -303,6 +324,12 @@ function dropdownValues(values) {
 dropdownValues(values)
 checkboxValues(labels)
 
+/* 
+============================================================================
+  Asynchronous request
+============================================================================
+*/
+
 async function getData(url) {
   try {
     const response = await axios.get(url)
@@ -313,17 +340,20 @@ async function getData(url) {
   }
 }
 
-function remove(element) {
-  while (element.lastChild) {
-    element.removeChild(element.lastChild)
-  }
-}
-
-const selectionForm = document.querySelector('#selection-form')
+/* 
+============================================================================
+  Selection form event handler
+============================================================================
+*/
 
 selectionForm.addEventListener('submit', async (event) => {
   event.preventDefault()
 
+  /* 
+    Local function & variable declaration
+  ==========================================================================
+  */
+  
   const APP_ID = '8be4e382'
   const APP_KEY = '4b5c55a4d169b0a5913dc8fbc9764f49'
 
@@ -337,62 +367,82 @@ selectionForm.addEventListener('submit', async (event) => {
   const search = document.querySelector('#search-box')
 
   const days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
-  
-  let label = new String()
-  let type = new String()
-  let input = ''
-  
+
+  let shoppingList = new Array()
+
   const BASE_URL = (input) => `https://api.edamam.com/search?q=${input}&app_id=${APP_ID}&app_key=${APP_KEY}`
 
+  /* 
+    Initialize all sections as visible
+  ==========================================================================
+  */
+  
   visibleSchedule.style.visibility = 'visible'
   visibleSchedule.style.maxHeight = 'none'
 
-  // visibleSelection.style.visibility = 'hidden'
-  // visibleSelection.style.maxHeight = '0'
+  visibleSelection.style.visibility = 'visible'
+  visibleSelection.style.maxHeight = 'none'
 
   visibleShopping.style.visibility = 'visible'
   visibleShopping.style.maxHeight = 'none'
 
+  /*
+    If no text in search box, don't add to URL
+  ==========================================================================
+  */
+  
   if (search) {
     input = parse(search.value)
+  } else {
+    input = ''
   }
-
+  
+  /* 
+    Collect checkbox selected values.
+    Concatenate to URL
+  ==========================================================================
+  */
   document.querySelectorAll('select').forEach(i => {
     a = i.options[i.selectedIndex].textContent
     if (a) {
-      type += `&${i.value}=${a}`
+      BASE_URL += `&${i.value}=${a}`
     }
   })
 
   checkboxes.forEach(i => {
     if (i.checked) {
-      label += `&${i.name}=${i.value}`
+      BASE_URL += `&${i.name}=${i.value}`
     }
   })
   
-  
-  let url = BASE_URL(input) + type + label
-  console.log(url)
-  // selectionURL.innerText = url
-  // selectionURL.href = url
-  // selectionURL.target = '_blank'
+  let url = BASE_URL(input)
 
-  let shoppingList = new Array()
+  selectionURL.innerText = url
+  selectionURL.href = url
+  selectionURL.target = '_blank'
   
+  /*
+    Get response data
+  ==========================================================================
+  */
   
-  const hits = await getData(url)
-  console.log(hits.data)
+  const data = await getData(url)
 
-  if (hits.status != 403) {
+  /*
+    If response is not an error
+  ==========================================================================
+  */
+  
+  if (!(data.status == 403) && !(data.status == 401)) {
     selectionURL.innerText = ''
     days.forEach(i => {
-      const arr = hits[days.indexOf(i)].recipe.ingredients
+      const arr = data[days.indexOf(i)].recipe.ingredients
       const monday = document.querySelector(`#${i}`)
       const h3 = document.createElement('h3')
       const container = document.querySelector(`#${i}`)
       remove(container)
 
-      h3.textContent = hits[days.indexOf(i)].recipe.label
+      h3.textContent = data[days.indexOf(i)].recipe.label
       monday.appendChild(h3)
 
       arr.forEach(i => {
@@ -402,10 +452,17 @@ selectionForm.addEventListener('submit', async (event) => {
         shoppingList.push(i.text)
         monday.appendChild(p)
       })
-    
-      if (hits[days.indexOf(i)].recipe.url) {
+
+      nlp(shoppingList)
+      
+      /*
+        If no text in search box, don't add to URL
+      ======================================================================
+      */
+      
+      if (data[days.indexOf(i)].recipe.url) {
         const a = document.createElement('a')
-        a.href = hits[days.indexOf(i)].recipe.url
+        a.href = data[days.indexOf(i)].recipe.url
         a.innerText = 'Directions'
         a.className = 'section-button'
         a.target = '_blank'
@@ -416,19 +473,24 @@ selectionForm.addEventListener('submit', async (event) => {
     const shoppingOrderedList = document.querySelector('#shopping-list')
     remove(shoppingOrderedList)
     shoppingList.forEach(i => {
-    
       const li = document.createElement('li')
       li.innerText = i
       shoppingOrderedList.appendChild(li)
     })
   } else {
     const a = document.createElement('a')
-    selectionURL.innerText = hits.data
+    selectionURL.innerText = data.data
     selectionURL.href = ''
     selectionURL.style.textDecoration = 'none'
     remove(shoppingOrderedList)
   }
 })
+
+/* 
+============================================================================
+  Add event listener to print button 
+============================================================================
+*/
 
 const printButton = document.querySelector('#print-schedule')
 
@@ -436,5 +498,17 @@ printButton.addEventListener('click', () => {
   const HTML = document.querySelector('.recipe.active')
   const recipeWindow = window.open('', 'Print Recipe', `status=1,width=${300},height=${400}`)
   recipeWindow.document.write(HTML.innerHTML)
+  recipeWindow.print()
 })
 
+/* 
+============================================================================
+  Ingredient list parsing
+============================================================================
+*/
+
+function nlp(array) {
+  array.forEach(i => {
+    console.log(i.split(' '))
+  })
+}
