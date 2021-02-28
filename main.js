@@ -299,7 +299,7 @@ function checkboxValues(data) {
   Object.keys(data).forEach(i => {
     data[i].forEach(j => {
       diet.insertAdjacentHTML('beforeend', `
-      <li>
+      <li class="selection-item">
         <input type="checkbox" name="${i}" value="${j.parameter}" class="diet-checkbox" id="diet-checkbox-${j.parameter}">
         <label for="diet-checkbox-${j.parameter}">${j.label}</label>
       </li>
@@ -396,7 +396,13 @@ selectionForm.addEventListener('submit', async (event) => {
   } else {
     input = ''
   }
-  
+
+  let url = BASE_URL(input)
+
+  // selectionURL.innerText = url
+  // selectionURL.href = url
+  // selectionURL.target = '_blank'
+
   /* 
     Collect checkbox selected values.
     Concatenate to URL
@@ -405,21 +411,15 @@ selectionForm.addEventListener('submit', async (event) => {
   document.querySelectorAll('select').forEach(i => {
     a = i.options[i.selectedIndex].textContent
     if (a) {
-      BASE_URL += `&${i.value}=${a}`
+      url += `&${i.value}=${a}`
     }
   })
 
   checkboxes.forEach(i => {
     if (i.checked) {
-      BASE_URL += `&${i.name}=${i.value}`
+      url += `&${i.name}=${i.value}`
     }
   })
-  
-  let url = BASE_URL(input)
-
-  selectionURL.innerText = url
-  selectionURL.href = url
-  selectionURL.target = '_blank'
   
   /*
     Get response data
@@ -479,16 +479,17 @@ selectionForm.addEventListener('submit', async (event) => {
     const shoppingOrderedList = document.querySelector('#shopping-list')
     
     remove(shoppingOrderedList)
-    nlp(shoppingList)
-
-    shoppingList.forEach(i => {
+    
+    nlp(shoppingList).forEach(i => {
       const li = document.createElement('li')
+      li.id = 'shopping-item'
       li.innerText = i
       shoppingOrderedList.appendChild(li)
     })
+
   } else {
-    const a = document.createElement('a')
     selectionURL.innerText = data.data
+    selectionURL.className = 'error-message'
     selectionURL.href = ''
     selectionURL.style.textDecoration = 'none'
     remove(shoppingOrderedList)
