@@ -1,5 +1,10 @@
-// I definitely needed a help with this otherwise I probably wouldn't have finished on time
-// Huge thanks to this --> https://medium.com/@marcusmichaels/how-to-build-a-carousel-from-scratch-in-vanilla-js-9a096d3b98c9
+// Source reference: https://medium.com/@marcusmichaels/how-to-build-a-carousel-from-scratch-in-vanilla-js-9a096d3b98c9
+
+/* 
+============================================================================
+  API parameter data & misc functions & global variable declarations
+============================================================================
+*/
 
 !(function (d) {
   let itemClassName = "recipe"

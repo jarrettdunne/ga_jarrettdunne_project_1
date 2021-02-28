@@ -445,18 +445,24 @@ selectionForm.addEventListener('submit', async (event) => {
       h3.textContent = data[days.indexOf(i)].recipe.label
       monday.appendChild(h3)
 
+      /*
+        Response has an array of ingredients.
+      ======================================================================
+      */
+      
       arr.forEach(i => {
         const p = document.createElement('p')
-      
         p.textContent = i.text
         shoppingList.push(i.text)
         monday.appendChild(p)
       })
-
-      nlp(shoppingList)
       
       /*
-        If no text in search box, don't add to URL
+        API does not have recipe directions in response.
+        It does provide a URL to them tough.
+
+        This checks if the response gives a URL to the directions then
+        it creates a button link under the ingredients list.
       ======================================================================
       */
       
@@ -471,7 +477,10 @@ selectionForm.addEventListener('submit', async (event) => {
     })
 
     const shoppingOrderedList = document.querySelector('#shopping-list')
+    
     remove(shoppingOrderedList)
+    nlp(shoppingList)
+
     shoppingList.forEach(i => {
       const li = document.createElement('li')
       li.innerText = i
@@ -488,15 +497,31 @@ selectionForm.addEventListener('submit', async (event) => {
 
 /* 
 ============================================================================
-  Add event listener to print button 
+  Add event listener to print button to ACTIVE recipe
 ============================================================================
 */
 
-const printButton = document.querySelector('#print-schedule')
+const printButtonSchedule = document.querySelector('#print-schedule')
 
-printButton.addEventListener('click', () => {
+printButtonSchedule.addEventListener('click', () => {
   const HTML = document.querySelector('.recipe.active')
-  const recipeWindow = window.open('', 'Print Recipe', `status=1,width=${300},height=${400}`)
+  const recipeWindow = window.open('', 'Print Recipe', `status=1,width=${400},height=${600}`)
+  recipeWindow.document.write(HTML.innerHTML)
+  recipeWindow.print()
+})
+
+/* 
+============================================================================
+  Add event listener to print button to shopping list
+============================================================================
+*/
+
+const printButtonShopping = document.querySelector('#print-shopping')
+
+printButtonShopping.addEventListener('click', () => {
+  const HTML = document.querySelector('#shopping-list')
+  const recipeWindow = window.open('', 'Print Recipe', `status=1,width=${400},height=${800}`)
+  recipeWindow.document.write('<h2>Shopping List</h3>')
   recipeWindow.document.write(HTML.innerHTML)
   recipeWindow.print()
 })
@@ -511,4 +536,5 @@ function nlp(array) {
   array.forEach(i => {
     console.log(i.split(' '))
   })
+  return array
 }
