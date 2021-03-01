@@ -84,7 +84,7 @@ ul {
   padding: auto;
 }
 
-@media screen and (max-width: 620px) {
+@media screen and (max-width: 720px) {
   .nav-header {
     flex-direction: column;
     align-items: center;
@@ -233,7 +233,7 @@ input[type='checkbox'] + label  {
   }
 }
 
-@media screen and (max-width: 620px) {
+@media screen and (max-width: 720px) {
   #shopping-list {
     margin: 0;
     margin-left: auto;
@@ -292,7 +292,7 @@ h2:hover {
   align-items: center;
 }
 
-@media screen and (max-width: 620px) {
+@media screen and (max-width: 720px) {
   .collapsible-content-header {
     flex-direction: column;
     align-items: center;
