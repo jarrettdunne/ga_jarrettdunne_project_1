@@ -409,10 +409,6 @@ selectionForm.addEventListener('submit', async (event) => {
 
   let url = BASE_URL(input)
 
-  // selectionURL.innerText = url
-  // selectionURL.href = url
-  // selectionURL.target = '_blank'
-
   /* 
     Collect checkbox selected values.
     Concatenate to URL
@@ -445,6 +441,8 @@ selectionForm.addEventListener('submit', async (event) => {
   
   if (!(data.status == 403) && !(data.status == 401)) {
     selectionURL.innerText = ''
+    selectionURL.style.backgroundColor = '#313131'
+    selectionURL.style.border = '0.1em solid #313131'
     days.forEach(i => {
       const arr = data[days.indexOf(i)].recipe.ingredients
       const monday = document.querySelector(`#${i}`)
@@ -502,6 +500,8 @@ selectionForm.addEventListener('submit', async (event) => {
     selectionURL.className = 'error-message'
     selectionURL.href = ''
     selectionURL.style.textDecoration = 'none'
+    selectionURL.style.backgroundColor = '#ffffff'
+    selectionURL.style.border = '0.1em solid #ffffff'
     remove(shoppingOrderedList)
 
     visibleSchedule.style.visibility = 'hidden'
@@ -546,6 +546,7 @@ printButtonShopping.addEventListener('click', () => {
 /* 
 ============================================================================
   Ingredient list parsing
+  (DON'T ASK)
 ============================================================================
 */
 

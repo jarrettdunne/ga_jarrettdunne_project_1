@@ -4,11 +4,14 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
   <script defer src="./main.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="https://developer.edamam.com/attribution/badge.js"></script>
+
   <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
+
   <title>Recipe Scheduler</title>
 </head>
 <body>
@@ -24,7 +27,7 @@
       </nav>
     </div>
     <div>
-      <p>
+      <p class="description">
         The intent of this project was to create a application on top of the EDAMAM Recipe Search API that would display a recipe on each day of the week as well as consoildating the ingredients from each recipe in a shopping list. Both the recipes and the shopping list would be printable. The recipes would be requested with an authorization ID and key and specified URL tags; the tags were defined in the APIs documention. 
         <br><br>
         However, the application does not work as intended due to the unresponsiveness of the API to its own parameters. Thus, some changes have been made to accomdate for the now known limited capabilities of the EDAMAM Recipe Search API.</p>
@@ -109,7 +112,6 @@
                 <h3 class="day">sunday</h3>
                 <div id="sunday"></div>
               </div>
-
               <div class="recipe__button--next"></div>
               <div class="recipe__button--prev"></div>
             </div>

@@ -72,13 +72,24 @@ ul {
 .nav-header {
   display: flex;
   justify-content: space-between;
-}
+} 
 
 .nav-list {
   display: flex;
   list-style-type: none;
+  margin-right: 1rem;
 }
 
+.description {
+  padding: auto;
+}
+
+@media screen and (max-width: 620px) {
+  .nav-header {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 /* 
 ====================================
   selection
@@ -214,7 +225,6 @@ input[type='checkbox'] + label  {
   #shopping-list {
     column-count: 1;
     width: 550px;
-    
   }
   #shopping-item {
     /* margin-left: 3rem; */
@@ -225,6 +235,8 @@ input[type='checkbox'] + label  {
 
 @media screen and (max-width: 620px) {
   #shopping-list {
+    margin: 0;
+    margin-left: auto;
     column-count: 1;
     width: 400px;
     
@@ -280,6 +292,13 @@ h2:hover {
   align-items: center;
 }
 
+@media screen and (max-width: 620px) {
+  .collapsible-content-header {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 /* 
 ====================================
   carousel
@@ -291,6 +310,10 @@ h2:hover {
   overflow: hidden;
   width: 90%;
   margin: auto;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  align-items: center;  
 }
 
 .recipe-wrapper * {
@@ -301,6 +324,8 @@ h2:hover {
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
   transform-style: preserve-3d;
+  width: 80%;
+  /* max-width: 60%; */
 }
 
 .recipe {
@@ -308,8 +333,7 @@ h2:hover {
   position: absolute;
   top:0;
   width: 100%;
-  /* max-width: max-content; */
-  height: 27rem;
+  height: 100%;
   margin: auto;
   padding: 1rem 4rem;
   z-index: 100;
@@ -341,21 +365,21 @@ h2:hover {
   position: absolute;
   top:50%;
   width: 3rem;
-  height: 3rem;
+  height: 9rem;
   background-color: #FFF;
   transform: translateY(-50%);
-  border-radius: 50%;
+  border-radius: 5%;
   cursor: pointer; 
   z-index: 1001; /* Sit on top of everything */
   border:1px solid black;
 }
 
 .recipe__button--next {
-  right: 0;
+  right: 0.1rem;
 }
 
 .recipe__button--prev {
-  left: 0;
+  left: 0.1rem;
 }
 
 .recipe__button--next::after,
