@@ -4,6 +4,10 @@
 
 Recipe Scheduler
 
+## Deployed Project Link
+
+[Recipe Scheduler](https://jarrettdunne.github.io/recipe_scheduler/)
+
 ## Project Description
 
 With the frequency with which quarentines and severe weather keep us inside, it is highly probable that people are suffering from food boredom. This app tries to remedy that with randomly selected recipes for each day of the week as well as the cumulative totals of the ingredients for a convienent shopping list. In addition, it will allow diet and health restrictions as parameters.  
