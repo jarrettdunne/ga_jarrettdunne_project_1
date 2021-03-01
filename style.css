@@ -197,7 +197,9 @@ input[type='checkbox'] + label  {
 }
 
 #shopping-list {
-  margin-left: 0;
+  column-width: 550px;
+  overflow-wrap: break-word;
+  margin-left: 10rem;
   padding: 0;
   column-count: 2;
   width: max-content;
@@ -211,8 +213,29 @@ input[type='checkbox'] + label  {
 @media screen and (max-width: 1200px) {
   #shopping-list {
     column-count: 1;
+    width: 550px;
+    
+  }
+  #shopping-item {
+    /* margin-left: 3rem; */
+    /* padding-left: 10px; */
+    overflow-wrap: break-word;
   }
 }
+
+@media screen and (max-width: 620px) {
+  #shopping-list {
+    column-count: 1;
+    width: 400px;
+    
+  }
+  #shopping-item {
+    /* margin-left: 3rem; */
+    /* padding-left: 10px; */
+    overflow-wrap: break-word;
+  }
+}
+
 
 /* 
 ====================================

@@ -263,12 +263,22 @@ function remove(element) {
   }
 }
 
+function collapseNav() {
+  var x = document.getElementById("nav-list-id");
+  if (x.className === "nav-list") {
+    x.className += " responsive";
+  } else {
+    x.className = "nav-list";
+  }
+}
+
 const cchNodeList = document.querySelectorAll('.collapsible-content-header')
 const selectionForm = document.querySelector('#selection-form')
 
 /* 
 ============================================================================
-  Collapsible section event handler 
+  Collapsible section event handler
+  Initialize schedule and shopping sections as hidden
 ============================================================================
 */
 
@@ -376,12 +386,12 @@ selectionForm.addEventListener('submit', async (event) => {
     Initialize all sections as visible
   ==========================================================================
   */
-  
-  visibleSchedule.style.visibility = 'visible'
-  visibleSchedule.style.maxHeight = 'none'
 
   visibleSelection.style.visibility = 'visible'
   visibleSelection.style.maxHeight = 'none'
+
+  visibleSchedule.style.visibility = 'visible'
+  visibleSchedule.style.maxHeight = 'none'
 
   visibleShopping.style.visibility = 'visible'
   visibleShopping.style.maxHeight = 'none'
@@ -493,6 +503,12 @@ selectionForm.addEventListener('submit', async (event) => {
     selectionURL.href = ''
     selectionURL.style.textDecoration = 'none'
     remove(shoppingOrderedList)
+
+    visibleSchedule.style.visibility = 'hidden'
+    visibleSchedule.style.maxHeight = '0'
+  
+    visibleShopping.style.visibility = 'hidden'
+    visibleShopping.style.maxHeight = '0'
   }
 })
 
@@ -535,16 +551,15 @@ printButtonShopping.addEventListener('click', () => {
 
 function nlp(array) {
   array.forEach(i => {
-    console.log(i.split(' '))
+    // console.log(i.split(' '))
   })
   return array
 }
 
-// Source reference: https://medium.com/@marcusmichaels/how-to-build-a-carousel-from-scratch-in-vanilla-js-9a096d3b98c9
-
 /* 
 ============================================================================
   Carousel
+  Source reference: https://medium.com/@marcusmichaels/how-to-build-a-carousel-from-scratch-in-vanilla-js-9a096d3b98c9
 ============================================================================
 */
 
