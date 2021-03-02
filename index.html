@@ -33,108 +33,112 @@
         However, the application does not work as intended due to the unresponsiveness of the API to its own parameters. Thus, some changes have been made to accomdate for the now known limited capabilities of the EDAMAM Recipe Search API.</p>
     </div>
   </header>
-  <main>
-    <div class="collapsible" id="selection-id">
-      <div class="collapsible-content-header selection">
-        <h2>Selection</h2>
-        <div></div>
-      </div>
-      <div class="collapsible-content selection">
-        <div class="collapsible-content-inner selection">
-          <form class="selection" id="selection-form">
-            <div class="search-box-wrapper">
-              <label for="search">Search:</label>
-              <input type="text" name="search" id="search-box" >
-              
-            </div>
-            <div id="selection-dropdowns">
-              <label for="cuisine-type" class="dropdown-label">Cuisine Type:</label>
-              <select name="cuisine-type" id="option-cuisine">
-                <option selected value="" class="selection-option"></option>
-              </select>
-              <label for="meal-type" class="dropdown-label">Meal Type:</label>
-              <select name="meal-type" id="option-meal">
-                <option selected value="" class="selection-option"></option>
-              </select>
-              <label for="dish-type" class="dropdown-label">Dish Type:</label>
-              <select name="dish-type" id="option-dish">
-                <option selected value="" class="selection-option"></option>
-              </select>
-            </div>
-            <div class="checkboxes">
-              <div class="diet-checkboxes">
-                <p>Diet & Health Labels</p>
-                <ul id="diet"></ul>
+  <div class="main-div">
+    <aside id="aside-left"></aside>
+    <main>
+      <div class="collapsible" id="selection-id">
+        <div class="collapsible-content-header selection">
+          <h2>Selection</h2>
+          <div></div>
+        </div>
+        <div class="collapsible-content selection">
+          <div class="collapsible-content-inner selection">
+            <form class="selection" id="selection-form">
+              <div class="search-box-wrapper">
+                <label for="search">Search:</label>
+                <input type="text" name="search" id="search-box" >
+                
               </div>
+              <div id="selection-dropdowns">
+                <label for="cuisine-type" class="dropdown-label">Cuisine Type:</label>
+                <select name="cuisine-type" id="option-cuisine">
+                  <option selected value="" class="selection-option"></option>
+                </select>
+                <label for="meal-type" class="dropdown-label">Meal Type:</label>
+                <select name="meal-type" id="option-meal">
+                  <option selected value="" class="selection-option"></option>
+                </select>
+                <label for="dish-type" class="dropdown-label">Dish Type:</label>
+                <select name="dish-type" id="option-dish">
+                  <option selected value="" class="selection-option"></option>
+                </select>
+              </div>
+              <div class="checkboxes">
+                <div class="diet-checkboxes">
+                  <p>Diet & Health Labels</p>
+                  <ul id="diet"></ul>
+                </div>
+              </div>
+              <input type="submit" value="Plan" class="section-button" id="selection-button">
+            </form>
+            <div>
+              <a id="selection-url"></a>
             </div>
-            <input type="submit" value="Plan" class="section-button" id="selection-button">
-          </form>
-          <div>
-            <a id="selection-url"></a>
           </div>
         </div>
       </div>
-    </div>
-    <div class="collapsible" id="schedule-id">
-      <div class="collapsible-content-header schedule">
-        <h2>Schedule</h2>
-        <div></div>
-      </div>
-      <div class="collapsible-content schedule">
-        <div class="collapsible-content-inner schedule">
-          <div class="recipe-wrapper">
-            <div class="carousel">
-              <div class="recipe initial">
-                <h3 class="day">monday</h3>
-                <div id="monday"></div>
+      <div class="collapsible" id="schedule-id">
+        <div class="collapsible-content-header schedule">
+          <h2>Schedule</h2>
+          <div></div>
+        </div>
+        <div class="collapsible-content schedule">
+          <div class="collapsible-content-inner schedule">
+            <div class="recipe-wrapper">
+              <div class="carousel">
+                <div class="recipe initial">
+                  <h3 class="day">monday</h3>
+                  <div id="monday"></div>
+                </div>
+                <div class="recipe">
+                  <h3 class="day">tuesday</h3>
+                  <div id="tuesday"></div>
+                </div>
+                <div class="recipe">
+                  <h3 class="day">wednesday</h3>
+                  <div id="wednesday"></div>
+                </div>
+                <div class="recipe">
+                  <h3 class="day">thursday</h3>
+                  <div id="thursday"></div>
+                </div>
+                <div class="recipe">
+                  <h3 class="day">friday</h3>
+                  <div id="friday"></div>
+                </div>
+                <div class="recipe">
+                  <h3 class="day">saturday</h3>
+                  <div id="saturday"></div>
+                </div>
+                <div class="recipe">
+                  <h3 class="day">sunday</h3>
+                  <div id="sunday"></div>
+                </div>
+                <div class="recipe__button--next"></div>
+                <div class="recipe__button--prev"></div>
               </div>
-              <div class="recipe">
-                <h3 class="day">tuesday</h3>
-                <div id="tuesday"></div>
-              </div>
-              <div class="recipe">
-                <h3 class="day">wednesday</h3>
-                <div id="wednesday"></div>
-              </div>
-              <div class="recipe">
-                <h3 class="day">thursday</h3>
-                <div id="thursday"></div>
-              </div>
-              <div class="recipe">
-                <h3 class="day">friday</h3>
-                <div id="friday"></div>
-              </div>
-              <div class="recipe">
-                <h3 class="day">saturday</h3>
-                <div id="saturday"></div>
-              </div>
-              <div class="recipe">
-                <h3 class="day">sunday</h3>
-                <div id="sunday"></div>
-              </div>
-              <div class="recipe__button--next"></div>
-              <div class="recipe__button--prev"></div>
             </div>
+            <input type="button" value="Print" class="section-button print" id="print-schedule">
           </div>
-          <input type="button" value="Print" class="section-button print" id="print-schedule">
         </div>
       </div>
-    </div>
-    <div class="collapsible" id="shopping-id">
-      <div class="collapsible-content-header shopping">
-        <h2>Shopping</h2>
-        <div></div>
-      </div>
-      <div class="collapsible-content shopping">
-        <div class="collapsible-content-inner shopping">
-          <div class="shopping">
-            <ol id='shopping-list'></ol>
+      <div class="collapsible" id="shopping-id">
+        <div class="collapsible-content-header shopping">
+          <h2>Shopping</h2>
+          <div></div>
+        </div>
+        <div class="collapsible-content shopping">
+          <div class="collapsible-content-inner shopping">
+            <div class="shopping">
+              <ol id='shopping-list'></ol>
+            </div>
+            <input type="button" value="Print" class="section-button print" id="print-shopping">
           </div>
-          <input type="button" value="Print" class="section-button print" id="print-shopping">
         </div>
       </div>
-    </div>
-  </main>
+    </main>
+    <aside id="aside-right"></aside>
+  </div>
   <footer>
     <div id="edamam-badge" data-color="white"></div>
     <div>&copy;DunneByDesign 2021</div>

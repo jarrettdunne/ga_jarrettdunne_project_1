@@ -43,6 +43,33 @@ ul {
   padding: 0;
 }
 
+.main-div {
+  display: flex;
+}
+
+#aside-left {
+  order: 1;
+}
+
+main {
+  order: 2;
+}
+
+#aside-right {
+  order: 3;
+}
+
+#aside-left,
+#aside-right {
+  width: 10%;
+}
+
+@media screen and (max-width: 920px) {
+  .main-div {
+    flex-direction: column;
+  }
+}
+
 /* 
 ====================================
   hide features
